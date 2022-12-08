@@ -69,6 +69,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -112,6 +113,7 @@
     <Compile Include="ABIS_API\JsonResult\ImageHandObj.cs" />
     <Compile Include="ABIS_API\JsonResult\missingFingerprintsObj.cs" />
     <Compile Include="ABIS_API\JsonResult\RootObject.cs" />
+    <Compile Include="Modilty\Logger.cs" />
     <Compile Include="ThumbsSegmentation.cs" />
     <Compile Include="Modilty\Thumbs.cs" />
     <Compile Include="Modilty\FingerPrint.cs" />

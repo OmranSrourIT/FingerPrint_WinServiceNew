@@ -1,6 +1,8 @@
-﻿using System;
+﻿using FingerPrint_WinService.Modilty;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
@@ -22,23 +24,39 @@ namespace FingerPrint_WinService
 
         protected override void OnStart(string[] args)
         {
-            var config = new HttpSelfHostConfiguration("http://localhost:12300");
-            config.EnableCors();
-            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            try
+            {
+                string ServiceURLPath = ConfigurationManager.AppSettings["UrlSelfHosting"];
 
-            config.MaxReceivedMessageSize = 2147483647; // use config for this value
-             
 
-            config.Routes.MapHttpRoute(
-                name: "API",
-                routeTemplate: "api/{controller}/{action}/{id}",
-                defaults: new { controller = "AFISHome", id = RouteParameter.Optional }
-                );
+                var config = new HttpSelfHostConfiguration(ServiceURLPath);
+                config.EnableCors();
+                config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
-            HttpSelfHostServer server = new HttpSelfHostServer(config);
-            server.OpenAsync().Wait();
-             
-            //WriteToFile("api http://localhost:1234 in done to calling" + DateTime.Now);
+                config.MaxReceivedMessageSize = 2147483647; // use config for this value
+
+
+                config.Routes.MapHttpRoute(
+                    name: "API",
+                    routeTemplate: "api/{controller}/{action}/{id}",
+                    defaults: new { controller = "AFISHome", id = RouteParameter.Optional }
+                    );
+                Logger.WriteLog("تم تشغيل الخدمة بصمات الاصابع بنجاح");
+                HttpSelfHostServer server = new HttpSelfHostServer(config);
+                server.OpenAsync().Wait();
+
+                //WriteToFile("api http://localhost:1234 in done to calling" + DateTime.Now);
+
+            }
+            catch (Exception ex)
+            {
+                var stackTrace = new StackTrace(ex, true);
+                var frame = stackTrace.GetFrame(0);
+                var line = frame.GetFileLineNumber();
+                Logger.WriteLog("ErrorMessage" + Environment.NewLine + ex.Message + Environment.NewLine + stackTrace + "Line" + line);
+
+            }
+            
 
         }
 

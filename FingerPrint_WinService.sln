@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FingerPrint_WinService", "FingerPrint_WinService\FingerPrint_WinService.csproj", "{1C24BCE7-40DA-46AA-ADB0-9BFB53109267}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FingerPrintSetup", "..\..\..\..\source\repos\FingerPrint_WinService\FingerPrintSetup\FingerPrintSetup.vdproj", "{A2AA45A1-1125-460A-8E7E-CF6A4A35993E}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FingerPrintWindowsSetup", "FingerPrintWindowsSetup\FingerPrintWindowsSetup.vdproj", "{FF77F3BF-3C59-4D78-8C76-A55281AB415B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,8 @@ Global
 		{1C24BCE7-40DA-46AA-ADB0-9BFB53109267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C24BCE7-40DA-46AA-ADB0-9BFB53109267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C24BCE7-40DA-46AA-ADB0-9BFB53109267}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2AA45A1-1125-460A-8E7E-CF6A4A35993E}.Debug|Any CPU.ActiveCfg = Debug
-		{A2AA45A1-1125-460A-8E7E-CF6A4A35993E}.Debug|Any CPU.Build.0 = Debug
-		{A2AA45A1-1125-460A-8E7E-CF6A4A35993E}.Release|Any CPU.ActiveCfg = Release
-		{A2AA45A1-1125-460A-8E7E-CF6A4A35993E}.Release|Any CPU.Build.0 = Release
+		{FF77F3BF-3C59-4D78-8C76-A55281AB415B}.Debug|Any CPU.ActiveCfg = Debug
+		{FF77F3BF-3C59-4D78-8C76-A55281AB415B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
